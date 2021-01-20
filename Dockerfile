@@ -1,10 +1,11 @@
-FROM debian:buster
-
+FROM ubuntu:20.04
+ENV TZ=Europe/Warsaw
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN set -ex; \
     apt-get update; \
     apt-get install -y \
       bash \
-      wmaker \
+      icewm \
       nano \
       neofetch \
       net-tools \
